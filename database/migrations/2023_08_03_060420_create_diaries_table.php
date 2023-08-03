@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dailies', function (Blueprint $table) {
+        Schema::create('diaries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('date');
-            $table->string('title');
-            $table->text('body');
-            $table->softDeletes();
-            $table->string('image_url');
-            $table->foreignId('user_id')->constrained('users');
         });
     }
 
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dailies');
+        Schema::dropIfExists('diaries');
     }
 };
