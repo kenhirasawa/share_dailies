@@ -9,10 +9,11 @@ class DiaryController extends Controller
 {
     public function index (Diary $diary)
     {
-        return view('dialies.index')->with(['dialies' => $diary->getPagintateByLimit()]);
+        return view('diaries.index')->with(['diaries' => $diary->getPaginateByLimit()]);
     }
+    
     public function show (Diary $diary)
     {
-        return view('dialies.show')->with(['post' => $diary]);
+        return view('diaries.show')->with(['diary' => $diary]);
     }
 }

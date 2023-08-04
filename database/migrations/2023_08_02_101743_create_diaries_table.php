@@ -16,6 +16,12 @@ return new class extends Migration
         Schema::create('diaries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('date');
+            $table->string('title');
+            $table->text('body');
+            $table->softDeletes();
+            $table->string('image_url');
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 
