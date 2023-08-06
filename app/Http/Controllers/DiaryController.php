@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\DiaryRequest;
 use App\Models\Diary;
+use Illuminate\Support\Facades\Auth;
+
 
 class DiaryController extends Controller
 {
@@ -15,5 +17,16 @@ class DiaryController extends Controller
     public function show (Diary $diary)
     {
         return view('diaries.show')->with(['diary' => $diary]);
+    }
+    public function create()
+    {
+        return view ('diaries.create');
+    }
+    public function store(DiaryRequest $request,Diary $diary)
+    {
+        $input =$request['post'];#敢えてpostにしている
+        $input['user_id']=Auth::id(); 
+        $diary->fill($input)->save();
+        return redirect('/diaries/'.$diary->id);
     }
 }

@@ -1,6 +1,8 @@
 <x-app-layout>
     <x-slot name="header">share diary</x-slot>
         <h1>Share diary</h1>
+        <a href='/diaries/create'>新規作成</a>
+        <!--投稿日を表示したい-->
         <div class='diaries'>
             @foreach ($diaries as $diary)
                 <div class='diary'>

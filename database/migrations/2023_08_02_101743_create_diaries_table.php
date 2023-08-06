@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('body');
             $table->softDeletes();
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
             $table->foreignId('user_id')->constrained('users');
         });
     }
