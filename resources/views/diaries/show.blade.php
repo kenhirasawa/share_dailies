@@ -8,6 +8,7 @@
         <h3>本文</h3>
         <p>{{$diary->body}}</p>
     </div>
+    <div class-"edit"><a href="/diaries/{{$diary->id}}/edit">編集</a></div>
     <div class="footer">
         <a href="/diaries">戻る</a>
     </div>
