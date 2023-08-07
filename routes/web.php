@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/diaries/{diary}',[DiaryController::class,'show']);
     Route::get('/diaries/{diary}/edit',[DiaryController::class,'edit']);
     Route::put('/diaries/{diary}',[DiaryController::class,'update']);
+    Route::delete('/diaries/{diary}', [DiaryController::class,'delete']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
