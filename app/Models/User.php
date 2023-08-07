@@ -46,4 +46,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Diary::class);
     }
+    
+    public function followings(){
+        return $this->belongsToMany(User::class,'follows','follower_user_id','followee_user_id');
+    }
+    
+    public function followers(){
+        return $this->belongsToMany(User::class,'follows','followee_user_id','follower_user_id');
+    }
 }
