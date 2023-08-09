@@ -12,4 +12,10 @@ class FollowController extends Controller
        $followings=Auth::user()->followings()->get();
        $followers =Auth::user()->followers()->get();
    }
+   
+   public function index()
+   {
+       $followings=Auth::user()->followings()->get();#usersテーブルからひぱってきている
+       return view('follows.index')->with(['followers' =>$followings]);
+   }
 }
