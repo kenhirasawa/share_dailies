@@ -54,4 +54,9 @@ class User extends Authenticatable
     public function followers(){
         return $this->belongsToMany(User::class,'follows','followee_user_id','follower_user_id');
     }
+    
+    public function getPaginateByLimit(int  $limit_count =10)
+    {
+        return $this->followings()->orderBy('name','ASC')->paginate($limit_count); //ASCが昇順 
+    }
 }

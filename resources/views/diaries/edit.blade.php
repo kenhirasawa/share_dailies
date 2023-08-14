@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">share diary</x-slot>
+    <x-slot name="header">Share Diary</x-slot>
     <h1 class="title">投稿編集画面</h1>
     <div class="title">
         
@@ -21,10 +21,12 @@
             <input type="text" name="post[body]" value="{{$diary->body}}">
             <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
         </div>
-        <input type="submit" value="更新"/>
+        <button type="submit" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">更新する</button>
     </form>
     <div class="footer">
-        <a href="/diaries/{{$diary->id}}">戻る</a> 　
+        <a href="/diaries/{{$diary->id}}">
+            <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">更新せず戻る</button>
+        </a> 　
         <!--個別の投稿に戻りたい-->
     </div>
 </x-app-layout>

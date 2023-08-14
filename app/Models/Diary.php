@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Diary extends Model
 {
@@ -18,7 +19,7 @@ class Diary extends Model
     
     public function getPaginateByLimit(int  $limit_count =10)
     {
-        return $this->orderBy('updated_at','DESC')->paginate($limit_count);
+        return $this->where('user_id',Auth::id())->orderBy('updated_at','DESC')->paginate($limit_count);
     }
    
     protected $fillable =[
@@ -26,5 +27,5 @@ class Diary extends Model
         'body',
         'date',
         'user_id',
-        ];
+    ];
 }

@@ -25,5 +25,50 @@ class DiarySeeder extends Seeder
             'image_url' => "diary",
             'user_id' => 1,
         ]);
+        DB::table('diaries')->insert([
+            'title' => "NO2",
+            'body' => "sample",
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'date' => new DateTime(),
+            'image_url' => "diary",
+            'user_id' => 2,
+        ]);
+        DB::table('diaries')->insert([
+            'title' => "NO3",
+            'body' => "sample",
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'date' => new DateTime(),
+            'image_url' => "diary",
+            'user_id' => 3,
+        ]);
+        DB::table('diaries')->insert([
+            'title' => "NO4",
+            'body' => "sample",
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'date' => new DateTime(),
+            'image_url' => "diary",
+            'user_id' => 4,
+        ]);
+        DB::table('diaries')->insert([
+            'title' => "NO5",
+            'body' => "sample",
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'date' => new DateTime(),
+            'image_url' => "diary",
+            'user_id' => 5,
+        ]);
+        DB::table('diaries')->insert([
+            'title' => "NO6",
+            'body' => "sample",
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'date' => new DateTime(),
+            'image_url' => "diary",
+            'user_id' => 6,
+        ]);
     }
 }

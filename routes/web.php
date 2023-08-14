@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/diaries',[DiaryController::class,'index']);
+    Route::get('/diaries',[DiaryController::class,'index'])->name('index');
     Route::get('/diaries/create',[DiaryController::class,'create']);
     Route::post('/diaries',[DiaryController::class,'store']);
     Route::get('/diaries/{diary}',[DiaryController::class,'show']);
@@ -36,7 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
-    Route::get('/follows',[FollowController::class,'index']);
+    Route::get('/follows',[FollowController::class,'index'])->name('follows');
+    Route::post('/follow_search',[FollowController::class,'register']);
+    Route::get('/follow_diaries/{follower}',[DiaryController::class,'friend_index']);
 });
 
 require __DIR__.'/auth.php';

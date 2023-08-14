@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DiaryRequest;
 use App\Models\Diary;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,7 +15,7 @@ class DiaryController extends Controller
         return view('diaries.index')->with(['diaries' => $diary->getPaginateByLimit()]);
     }
     
-    public function show (Diary $diary)
+    public function show (Diary $diary) #web.phpの{}内のものと$~は等しくなる
     {
         return view('diaries.show')->with(['diary' => $diary]);
     }
@@ -49,5 +50,10 @@ class DiaryController extends Controller
     {
         $diary->delete();
         return redirect('/diaries');
+    }
+    public function friend_index(User $follower)#followerがusresテーブルの指定されたデータをとってきている
+    {
+         $diaries = Diary::where('user_id',$follower->id)->get();
+         return view('diaries.friend_index')->with(['diaries' => $diaries]);
     }
 }
