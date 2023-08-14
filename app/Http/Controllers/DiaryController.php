@@ -6,7 +6,7 @@ use App\Http\Requests\DiaryRequest;
 use App\Models\Diary;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Cloudinary;
 
 class DiaryController extends Controller
 {
@@ -29,8 +29,13 @@ class DiaryController extends Controller
     {
         $input =$request['post'];#敢えてpostにしている
         $input['user_id']=Auth::id(); 
+        if($request->file('image')){
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input += ['image_url' => $image_url];
+        }
         $diary->fill($input)->save();
         return redirect('/diaries/'.$diary->id);
+       
     }
     
     public function edit(Diary $diary)
@@ -41,6 +46,10 @@ class DiaryController extends Controller
     public function update(DiaryRequest $request, Diary$diary)
     {
         $input_diary=$request['post'];
+        if($request->file('image')){
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input_diary += ['image_url' => $image_url];
+        }
         $diary->fill($input_diary)->save();
         
         return redirect ('/diaries/'.$diary->id);

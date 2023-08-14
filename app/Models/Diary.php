@@ -27,5 +27,6 @@ class Diary extends Model
         'body',
         'date',
         'user_id',
+        'image_url',
     ];
 }
