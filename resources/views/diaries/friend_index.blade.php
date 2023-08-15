@@ -10,7 +10,7 @@
                     </h2>
                     <h3 class="date">{{$diary->date}}</h3>  
                     <h3 class="post-author">{{$diary->user->name}}</h3>
-                    <p class='body'>{{$diary->body}}</p>
+                    <p class='body truncate'>{{$diary->body}}</p>
                 </div>
                 <hr>
             @endforeach

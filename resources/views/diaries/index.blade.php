@@ -14,7 +14,7 @@
                     </h2>
                     <h3 class="date">{{$diary->date}}</h3>
                     <h3 class="post-author">{{$diary->user->name}}</h3> <!--diaryモデルに書いてあるuserテーブルとのリレーションで名前が持ってこれる-->
-                    <p class='body'>{{$diary->body}}</p>
+                    <p class='body truncate'>{{$diary->body}}</p>
                     <form action="/diaries/{{$diary->id}}"  id="form_{{$diary->id}}" method="POST">
                         @csrf
                         @method('DELETE')
