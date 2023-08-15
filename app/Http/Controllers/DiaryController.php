@@ -63,6 +63,11 @@ class DiaryController extends Controller
     public function friend_index(User $follower)#followerがusresテーブルの指定されたデータをとってきている
     {
          $diaries = Diary::where('user_id',$follower->id)->get();
-         return view('diaries.friend_index')->with(['diaries' => $diaries]);
+         return view('diaries.friend_index')->with(['diaries' => $diaries,'follower'=>$follower]);
+    }
+    
+    public function friend_show (User $follower,Diary $diary) #web.phpの{}内のものと$~は等しくなる
+    {
+        return view('diaries.friend_show')->with(['diary' => $diary,'follower'=>$follower]);
     }
 }

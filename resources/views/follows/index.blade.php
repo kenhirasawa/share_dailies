@@ -1,6 +1,7 @@
 <x-app-layout>
     <x-slot name="header">Follows</x-slot>
-        <h1>フレンド一覧</h1>
+    <div class="p-6">
+        <h1 class="text-2xl">フレンド一覧</h1>
         <form action="/follow_search" method="POST">
             @csrf
             <div class="email">
@@ -11,17 +12,17 @@
         </form>
          <div class='followers'>
             @foreach ($followers as $follower)
-                <div class='followerers'>
-                    <h2 class='friend_id'>{{$follower->id}}</h2>
+                <div class='followerers pl-2  bg-white border-2 rounded-lg mt-2'>
                     <h3 class='friend_name'>
-                         <a href="/follow_diaries/{{$follower->id}}">{{$follower->name}}</a>
+                         <a href="/follow_diaries/{{$follower->id}}" class="text-blue-500 underline hover:no-underline">{{$follower->name}}</a>
                     </h3>
                     <p class='friend_email'>{{$follower->email}}</p>
                 </div>
                 <hr><!--投稿ごとの境界線-->
             @endforeach
         </div>
-         <div class='paginate'>
+    </div>
+        <div class='paginate'>
             {{$followers->links()}}
         </div>
 </x-app-layout>

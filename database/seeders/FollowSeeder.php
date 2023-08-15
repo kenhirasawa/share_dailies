@@ -17,7 +17,7 @@ class FollowSeeder extends Seeder
     {
         DB::table('follows')->insert([
             'follower_user_id' =>1,
-            'followee_user_id' =>3,
+            'followee_user_id' =>2,
             
         ]);
     }

@@ -18,56 +18,56 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'hirasawa',
-            'email' => 'devioa@gmail.com',
+            'name' => 'sample',
+            'email' => 'sample@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
          DB::table('users')->insert([
-            'name' => 'hirasawa1',
-            'email' => 'devioa1@gmail.com',
+            'name' => 'sample1',
+            'email' => 'sample1@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
          DB::table('users')->insert([
-            'name' => 'hirasawa2',
-            'email' => 'devioa2@gmail.com',
+            'name' => 'sample2',
+            'email' => 'sample2@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
         DB::table('users')->insert([
-            'name' => 'hirasawa3',
-            'email' => 'devioa3@gmail.com',
+            'name' => 'sample3',
+            'email' => 'sample3@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
         DB::table('users')->insert([
-            'name' => 'hirasawa4',
-            'email' => 'devioa4@gmail.com',
+            'name' => 'sample4',
+            'email' => 'sample4@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
         DB::table('users')->insert([
-            'name' => 'hirasawa5',
-            'email' => 'devioa5@gmail.com',
+            'name' => 'sample5',
+            'email' => 'sample5@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
         DB::table('users')->insert([
-            'name' => 'hirasawa6',
-            'email' => 'devioa6@gmail.com',
+            'name' => 'sample6',
+            'email' => 'sample6@gmail.com',
             'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
